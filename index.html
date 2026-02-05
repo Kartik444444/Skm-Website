@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SKM Public School - Nurturing Knowledge & Values</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SKM Public School in Sangaria - Quality education with modern facilities">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ===== THEME ===== */
+:root{
+  --bg:#000000;
+  --text:#f1f5f9;
+  --text-light:#a0aec0;
+  --card:#0d1117;
+  --primary:#69b886;
+  --primary-dark:#7dae8f;
+  --primary-light:#0a2540;
+  --success:#10b981;
+  --warning:#f59e0b;
+  --danger:#ef4444;
+  --shadow:0 4px 6px rgba(0,0,0,.5), 0 10px 20px rgba(0,0,0,.4);
+  --shadow-lg:0 20px 40px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Poppins, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:background-color .3s, color .3s;
+  line-height:1.6;
+}
+
+/* ===== HERO ===== */
+header{
+  height:60vh;
+  background:url('images/gate/gate.jpeg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  animation:slideInHeader .8s ease-out;
+}
+header div{
+  position:relative;
+  z-index:2;
+  animation:fadeInUp .8s ease-out;
+}
+header h1{
+  font-size:clamp(2rem,8vw,4.5rem);
+  margin:0;
+  font-weight:800;
+  letter-spacing:-.02em;
+  text-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+header p{
+  font-size:clamp(.9rem,2vw,1.3rem);
+  margin:12px 0 0;
+  font-weight:300;
+  text-shadow:0 1px 5px rgba(0,0,0,.2);
+  opacity:.95;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--card);
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  padding:12px;
+  box-shadow:var(--shadow);
+  flex-wrap:wrap;
+}
+nav a{
+  cursor:pointer;
+  font-weight:600;
+  text-decoration:none;
+  color:var(--text-light);
+  padding:8px 14px;
+  border-radius:6px;
+  transition:all .3s ease;
+  position:relative;
+}
+nav a:hover{
+  color:var(--primary);
+  background:var(--primary-light);
+}
+nav a.active{
+  color:var(--primary);
+  background:var(--primary-light);
+  box-shadow:inset 0 2px 4px rgba(11,94,215,.2);
+}
+nav button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  padding:8px 12px;
+  cursor:pointer;
+  font-weight:600;
+  transition:all .3s ease;
+  font-size:1.1rem;
+}
+nav button:hover{
+  background:var(--primary-dark);
+  transform:scale(1.05);
+}
+
+
+/* ===== SECTIONS ===== */
+section{
+  display:none;
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 20px;
+  min-height:70vh;
+  animation:fadeIn .4s ease-out;
+  background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),url('images/backgrounds/bg.jpeg') center/cover no-repeat;
+}
+#admin{
+  background:var(--bg);
+}
+section.active{
+  display:block;
+}
+h2{
+  color:var(--primary);
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  margin:0 0 30px;
+  font-weight:700;
+  text-align:center;
+}
+section p{
+  color:var(--text-light);
+  font-size:1rem;
+  line-height:1.8;
+  margin:12px 0;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* ===== CARDS ===== */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+  margin-top:30px;
+}
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  border:1px solid rgba(0,0,0,.05);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+  border-color:var(--primary);
+}
+.card img{
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:8px;
+  transition:transform .3s ease;
+}
+.card img:hover{
+  transform:scale(1.05);
+}
+.card strong{
+  color:var(--text);
+  font-size:1.1rem;
+  margin-top:8px;
+}
+
+/* ===== BADGES ===== */
+.badge{
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  display:inline-block;
+  width:fit-content;
+}
+.badge.normal{background:var(--primary-light);color:var(--primary)}
+.badge.important{background:#fef3c7;color:#d97706}
+.badge.urgent{background:#fee2e2;color:#dc2626}
+
+/* ===== FORMS ===== */
+.form-group{
+  margin-bottom:16px;
+}
+input,select,textarea{
+  width:100%;
+  padding:12px 16px;
+  margin:6px 0;
+  border-radius:8px;
+  border:2px solid #e2e8f0;
+  background:var(--card);
+  color:var(--text);
+  font-family:Poppins, sans-serif;
+  font-size:.95rem;
+  transition:all .3s ease;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px var(--primary-light);
+}
+button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:12px 24px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.95rem;
+  transition:all .3s ease;
+}
+button:hover{
+  background:var(--primary-dark);
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(11,94,215,.3);
+}
+button:active{
+  transform:translateY(0);
+}
+button.danger{background:var(--danger)}
+button.danger:hover{background:#dc2626;box-shadow:0 4px 12px rgba(239,68,68,.3)}
+
+/* ===== IMAGE UPLOAD ===== */
+.upload-box{
+  border:2px dashed #cbd5e1;
+  padding:40px 20px;
+  text-align:center;
+  border-radius:12px;
+  cursor:pointer;
+  transition:all .3s ease;
+  background:var(--primary-light);
+}
+.upload-box:hover{
+  border-color:var(--primary);
+  background:rgba(11,94,215,.08);
+}
+.upload-box.drag{
+  border-color:var(--primary);
+  background:rgba(11,94,215,.15);
+  transform:scale(1.02);
+}
+.preview{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:10px auto;
+  display:block;
+  border:3px solid var(--primary);
+  box-shadow:var(--shadow);
+}
+
+/* ===== MODAL ===== */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  animation:fadeIn .2s ease;
+}
+.modal-box{
+  background:var(--card);
+  padding:32px;
+  width:100%;
+  max-width:400px;
+  border-radius:12px;
+  box-shadow:var(--shadow-lg);
+  animation:slideUp .3s ease;
+}
+.modal-box h3{
+  color:var(--primary);
+  margin-top:0;
+  margin-bottom:20px;
+  font-size:1.5rem;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--card);
+  text-align:center;
+  padding:30px 20px;
+  font-size:.9rem;
+  color:var(--text-light);
+  border-top:1px solid rgba(0,0,0,.05);
+  margin-top:60px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes slideUp{
+  from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+@keyframes slideInHeader{
+  from{opacity:0;transform:translateY(-10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.success-message{
+  background:#d1fae5;
+  color:#065f46;
+  padding:12px 16px;
+  border-radius:8px;
+  margin-bottom:16px;
+  border-left:4px solid var(--success);
+  animation:slideInUp .3s ease;
+}
+.error-message{
+  background:#fee2e2;
+  color:#991b1b;
+  padding:12px 16px;
+  border-radius:8px;
+  margin-bottom:16px;
+  border-left:4px solid var(--danger);
+  animation:slideInUp .3s ease;
+}
+
+/* ===== ADMIN PANEL ===== */
+#adminControls h3{
+  color:var(--primary);
+  margin-top:30px;
+  margin-bottom:16px;
+  font-size:1.3rem;
+  border-bottom:2px solid var(--primary-light);
+  padding-bottom:10px;
+}
+#adminControls h3:first-child{
+  margin-top:0;
+}
+
+/* ===== NOTICE BOARD ENHANCEMENTS ===== */
+#notice .card{
+  border-left-width:4px;
+  border-left-style:solid;
+  transition:all .3s ease;
+}
+#notice .card:hover{
+  border-left-color:var(--primary);
+}
+#noticeSearch, #noticeCategoryFilter{
+  border:2px solid #e2e8f0;
+  padding:12px 16px;
+}
+#noticeSearch:focus, #noticeCategoryFilter:focus{
+  border-color:var(--primary);
+  outline:none;
+}
+#noticeAdminList .card{
+  background:rgba(11,94,215,.03);
+  border-left:none;
+}
+
+/* ===== TEACHER DRAG & DROP ===== */
+#teacherAdminList [draggable="true"]{
+  cursor:grab;
+  transition:all .2s ease;
+  border-top:3px solid transparent;
+}
+#teacherAdminList [draggable="true"]:active{
+  cursor:grabbing;
+}
+#teacherAdminList [draggable="true"]:hover{
+  background:rgba(11,94,215,.08);
+}
+
+/* ===== TEACHER TILES OVERLAY ===== */
+.teacher-tile{
+  position:relative !important;
+}
+.teacher-overlay{
+  z-index:10;
+}
+.teacher-tile:hover .teacher-overlay{
+  opacity:1 !important;
+  pointer-events:auto !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{
+    gap:6px;
+  }
+  nav a{
+    padding:6px 10px;
+    font-size:.9rem;
+  }
+  section{
+    padding:40px 16px;
+  }
+  .cards{
+    grid-template-columns:1fr;
+  }
+  .modal-box{
+    padding:24px;
+    margin:20px;
+  }
+}
+</style>
+
+<style>
+/* Mobile Optimization */
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
+
+@media (max-width: 768px) {
+  body { padding: 10px; }
+  nav, .nav, .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  p  { font-size: 1rem; line-height: 1.6; }
+  .container, .content, .wrapper {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1>SKM Public School</h1>
+    <p>Nurturing Knowledge, Values & Future Leaders in Sangaria</p>
+  </div>
+</header>
+
+<nav>
+  <a onclick="navTo('home',this)" class="active">Home</a>
+  <a onclick="navTo('about',this)">About</a>
+  <a onclick="navTo('faculty',this)">Staff</a>
+  <a onclick="navTo('facilities',this)">Facilities</a>
+  <a onclick="navTo('games',this)">Games & Athletics</a>
+  <a onclick="navTo('notice',this)">Notice</a>
+  <a onclick="openAdmin()">Admin</a>
+</nav>
+
+<section id="home" class="active"></section>
+
+<section id="about">
+<h2>About Our School</h2>
+<p>SKM Public School is dedicated to shaping young minds through quality education, discipline, and strong moral values.</p>
+<p>Inspired by the legacy of <strong>Gramothan Vidyapeeth</strong>, the institution follows value-based education.</p>
+<p>Education here is not limited to academics but includes character building and life skills.</p>
+<p>We aim to create responsible citizens who contribute positively to society.</p>
+<p>The school provides a safe, inclusive, and motivating learning environment.</p>
+<p>Teachers focus on individual attention and holistic development.</p>
+<p>Discipline, respect, and integrity are core principles.</p>
+<p>Modern teaching methods and smart classrooms enhance learning.</p>
+<p>Students are encouraged to think critically and creatively.</p>
+<p>Sports, arts, and cultural activities are integral parts of education.</p>
+<p>Leadership, teamwork, and communication skills are nurtured.</p>
+<p>Environmental awareness and social responsibility are emphasized.</p>
+<p>The school celebrates national festivals and cultural events.</p>
+<p>Regular assessments help track academic progress.</p>
+<p>Parents are partners in the learning journey.</p>
+<p>Safety and security of students are top priorities.</p>
+<p>We prepare students for competitive examinations and future challenges.</p>
+<p>Career guidance and counseling are provided.</p>
+<p>Life skills such as problem-solving and time management are taught.</p>
+<p>We believe every child has the potential to succeed.</p>
+</section>
+
+<section id="faculty">
+<h2>Our Staff</h2>
+<div class="cards" id="facultyCards"></div>
+
+<div id="facultyAdmin" style="display:none;margin-top:30px;padding:20px;background:var(--primary-light);border-radius:12px;color:var(--text)">
+  <h3>Add New Teacher</h3>
+  
+  <img id="imgPreview" class="preview"
+  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTAwIiByPSI2MCIgZmlsbD0iI2NjYyIvPjxwYXRoIGQ9Ik01MCAyNTBjMC02MCA1MC0xMDAgMTAwLTEwMHMxMDAgNDAgMTAwIDEwMCIgZmlsbD0iI2NjYyIvPjwvc3ZnPg==">
+  
+  <div id="dropZone" class="upload-box">
+    Drag & Drop Image or Click
+    <input type="file" id="imgInput" accept="image/*" hidden>
+  </div>
+  
+  <input id="tName" placeholder="Teacher Name">
+  <input id="tSubject" placeholder="Subject">
+  
+  <button onclick="addTeacher()" style="width:100%;margin-top:12px">Add Teacher</button>
+  
+  <h3 style="margin-top:20px">Manage Teachers</h3>
+  <div id="teacherAdminList"></div>
+</div>
+</section>
+
+<section id="facilities">
+<h2>School Facilities</h2>
+<div class="cards" id="facilitiesCards"></div>
+
+<div id="facilitiesAdmin" style="display:none;margin-top:30px;padding:20px;background:var(--primary-light);border-radius:12px;color:var(--text)">
+  <h3>Add/Edit Facility Image</h3>
+  <select id="facilitySelect" style="margin-bottom:15px">
+    <option value="">Select a facility...</option>
+  </select>
+
+  <div style="margin-top:18px;padding:12px;background:rgba(255,255,255,.06);border-radius:8px">
+    <h3 style="margin:6px 0 10px">Add New Facility</h3>
+    <input id="newFacilityId" placeholder="Unique id (e.g. canteen)" style="margin-bottom:8px">
+    <input id="newFacilityName" placeholder="Facility Name (e.g. Canteen)" style="margin-bottom:8px">
+    <input id="newFacilityDesc" placeholder="Short Description" style="margin-bottom:8px">
+    <button onclick="addFacility()" style="width:100%">Add Facility</button>
+  </div>
+  
+  <div id="facilityDropZone" class="upload-box" style="margin:15px 0">
+    Drag & Drop Image or Click
+    <input type="file" id="facilityImgInput" accept="image/*" hidden>
+  </div>
+  
+  <img id="facilityPreview" class="preview" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgZmlsbD0iIzIyYzU1ZSIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSI4MCIgcj0iNTAiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSIxMDAiIHk9IjE0MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" style="margin:15px auto;display:block">
+  
+  <button onclick="updateFacilityImage()" style="width:100%;margin-top:15px">Update Image</button>
+  
+  <h3 style="margin-top:30px">Manage Facilities</h3>
+  <div id="facilitiesList"></div>
+</div>
+</section>
+
+<section id="games">
+<h2>Games & Athletics</h2>
+<div class="cards" id="gamesCards"></div>
+
+<div id="gamesAdmin" style="display:none;margin-top:30px;padding:20px;background:var(--primary-light);border-radius:12px;color:var(--text)">
+  <h3>Add/Edit Game Image</h3>
+  <select id="gameSelect" style="margin-bottom:15px">
+    <option value="">Select a game...</option>
+    <option value="football">Football</option>
+    <option value="cricket">Cricket</option>
+    <option value="athletics">Athletics</option>
+    <option value="volleyball">Volleyball</option>
+    <option value="training">Physical Training</option>
+  </select>
+  
+  <div id="gameDropZone" class="upload-box" style="margin:15px 0">
+    Drag & Drop Image or Click
+    <input type="file" id="gameImgInput" accept="image/*" hidden>
+  </div>
+  
+  <img id="gamePreview" class="preview" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgZmlsbD0iIzIyYzU1ZSIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSI4MCIgcj0iNTAiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSIxMDAiIHk9IjE0MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" style="margin:15px auto;display:block">
+  
+  <button onclick="updateGameImage()" style="width:100%;margin-top:15px">Update Image</button>
+  
+  <h3 style="margin-top:30px">Manage Games</h3>
+  <div id="gamesList"></div>
+</div>
+</section>
+
+<section id="notice">
+<h2>Notice Board</h2>
+
+<div style="margin-bottom:20px;display:flex;gap:10px;flex-wrap:wrap">
+  <input type="text" id="noticeSearch" placeholder="🔍 Search notices..." style="flex:1;min-width:200px">
+  <select id="noticeCategoryFilter" style="flex:1;min-width:150px">
+    <option value="">All Categories</option>
+    <option value="academics">Academics</option>
+    <option value="events">Events</option>
+    <option value="holiday">Holidays</option>
+    <option value="general">General</option>
+  </select>
+</div>
+
+<div id="noticeList"></div>
+
+<div id="noticeAdmin" style="display:none;background:var(--card);padding:20px;border-radius:12px;margin-top:20px">
+  <h3 style="margin-top:0;color:var(--primary)">Post New Notice</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <select id="noticePriority">
+      <option value="normal">Normal Priority</option>
+      <option value="important">Important Priority</option>
+      <option value="urgent">Urgent Priority</option>
+    </select>
+    <select id="noticeCategory">
+      <option value="general">General</option>
+      <option value="academics">Academics</option>
+      <option value="events">Events</option>
+      <option value="holiday">Holidays</option>
+    </select>
+    <input type="date" id="noticeExpiry" placeholder="Expiry Date">
+    <div style="display:flex;gap:8px">
+      <input type="checkbox" id="noticePinned" style="width:auto">
+      <label for="noticePinned" style="margin:0">📌 Pin this notice</label>
+    </div>
+  </div>
+  <textarea id="noticeText" placeholder="Notice text" style="resize:vertical;min-height:100px;margin:12px 0"></textarea>
+  <button onclick="addNotice()" style="width:100%">📢 Post Notice</button>
+</div>
+
+<div id="noticeAdminList" style="display:none;margin-top:30px">
+  <h3 style="color:var(--primary)">Manage Notices</h3>
+  <div id="noticeManagePanel"></div>
+</div>
+</section>
+
+<section id="admin">
+<h2>Admin Panel</h2>
+
+<div id="adminControls" style="display:none">
+
+<h3>Manage Admin Accounts</h3>
+<div style="margin-bottom:20px;padding:16px;background:var(--primary-light);border-radius:8px">
+  <input id="newAdminUser" placeholder="New Admin Username" style="margin-bottom:8px">
+  <input id="newAdminPass" placeholder="New Admin Password" type="password" style="margin-bottom:8px">
+  <button onclick="addAdminAccount()" style="width:100%">Add Admin Account</button>
+</div>
+
+<div id="adminList"></div>
+
+<button class="danger" onclick="logout()" style="width:100%;margin-top:20px">Logout</button>
+</div>
+</section>
+
+<footer>
+© SKM Public School, Sangaria, Hanumangarh, Rajasthan, India
+</footer>
+
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <h3>Admin Login</h3>
+    <input id="loginUser" placeholder="Username">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button class="danger" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+let isAdmin=false;
+let croppedImage=null;
+let githubStatus=null;
+
+/* ===== UTILITY FUNCTIONS ===== */
+function showMessage(msg,type='success'){
+  const msgDiv=document.createElement('div');
+  msgDiv.className=type==='error'?'error-message':(type==='warning'?'warning-message':'success-message');
+  msgDiv.textContent=msg;
+  msgDiv.style.cssText=`
+    position:fixed;top:20px;right:20px;z-index:10000;
+    padding:15px 20px;border-radius:8px;
+    font-weight:500;box-shadow:0 4px 12px rgba(0,0,0,.3);
+    animation:slideIn .3s ease-out;
+    ${type==='error'?'background:#ef4444;color:white;':''}
+    ${type==='warning'?'background:#f59e0b;color:white;':''}
+    ${type==='success'?'background:#10b981;color:white;':''}
+  `;
+  document.body.appendChild(msgDiv);
+  setTimeout(()=>msgDiv.remove(),4000);
+}
+
+function validateEmail(email){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateInput(value,fieldName,minLength=1){
+  if(!value || value.trim().length < minLength){
+    showMessage(`${fieldName} must be at least ${minLength} characters`,'error');
+    return false;
+  }
+  return true;
+}
+
+// Check GitHub sync status on load
+async function checkGitHubStatus(){
+  try{
+    const res = await fetch('/api/github-status');
+    if(res.ok){
+      githubStatus = await res.json();
+      console.log('GitHub Status:', githubStatus.message);
+      return githubStatus.connected;
+    }
+  }catch(e){
+    console.warn('Could not check GitHub status');
+  }
+  return false;
+}
+
+/* ===== INIT DATA ===== */
+async function ensureInitialData(){
+  if(!localStorage.getItem('admins')){
+    // try to fetch persisted admins from server data file
+    try{
+      const res = await fetch('/data/admins.json');
+      if(res.ok){
+        const data = await res.json();
+        localStorage.setItem('admins', JSON.stringify(data));
+      } else {
+        localStorage.setItem('admins',JSON.stringify([{u:'admin',p:'admin123'}]));
+      }
+    }catch(err){
+      localStorage.setItem('admins',JSON.stringify([{u:'admin',p:'admin123'}]));
+    }
+  }
+
+  if(!localStorage.getItem('teachers')){
+    try{
+      const res = await fetch('/data/teachers.json');
+      if(res.ok){
+        const data = await res.json();
+        localStorage.setItem('teachers', JSON.stringify(data));
+      } else {
+        localStorage.setItem('teachers','[]');
+      }
+    }catch(err){
+      localStorage.setItem('teachers','[]');
+    }
+  }
+
+  if(!localStorage.getItem('games')){
+    try{
+      const res = await fetch('/data/games.json');
+      if(res.ok){
+        const data = await res.json();
+        localStorage.setItem('games', JSON.stringify(data));
+      } else {
+        localStorage.setItem('games', JSON.stringify({}));
+      }
+    }catch(err){
+      localStorage.setItem('games', JSON.stringify({}));
+    }
+  }
+
+  if(!localStorage.getItem('facilities')){
+    try{
+      const res = await fetch('/data/facilities.json');
+      if(res.ok){
+        const data = await res.json();
+        localStorage.setItem('facilities', JSON.stringify(data));
+      } else {
+        localStorage.setItem('facilities', JSON.stringify({}));
+      }
+    }catch(err){
+      localStorage.setItem('facilities', JSON.stringify({}));
+    }
+  }
+
+  if(!localStorage.getItem('notices')){
+    localStorage.setItem('notices','[]');
+  }
+}
+
+/* ===== NAV ===== */
+function navTo(id,el){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  const section=document.getElementById(id);
+  if(!section) return;
+  section.classList.add('active');
+  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+  if(el) el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ===== HOME SECTION ===== */
+function initHome(){
+  const home=document.getElementById('home');
+  home.innerHTML=`
+    <div style="text-align:center;animation:fadeInUp .6s ease">
+      <h2>Welcome to SKM Public School</h2>
+      <p style="font-size:1.1rem;color:var(--primary);font-weight:600;margin:20px 0">Excellence in Education, Values in Character</p>
+      <p>Discover our world-class facilities, dedicated staff, and holistic education approach.</p>
+      <div style="margin-top:40px">
+        <button onclick="navTo('about',document.querySelectorAll('nav a')[1])" style="margin:10px;padding:14px 32px;font-size:1rem">
+          Learn More
+        </button>
+        <button onclick="navTo('notice',document.querySelectorAll('nav a')[5])" style="margin:10px;padding:14px 32px;font-size:1rem;background:var(--success)">
+          View Notices
+        </button>
+      </div>
+    </div>
+  `;
+}
+initHome();
+
+/* ===== ADMIN ===== */
+function openAdmin(){
+  if(!isAdmin){
+    loginModal.style.display='flex';
+    return;
+  }
+  navTo('admin',document.querySelectorAll('nav a')[6]);
+}
+
+function closeModal(){
+  loginModal.style.display='none';
+  document.getElementById('loginUser').value='';
+  document.getElementById('loginPass').value='';
+}
+
+function login(){
+  const u=document.getElementById('loginUser').value.trim();
+  const p=document.getElementById('loginPass').value;
+  
+  if(!u||!p){
+    showMessage('Please enter username and password','error');
+    return;
+  }
+  
+  const admins=JSON.parse(localStorage.getItem('admins'));
+  if(admins.find(a=>a.u===u && a.p===p)){
+    isAdmin=true;
+    loginModal.style.display='none';
+    document.getElementById('adminControls').style.display='block';
+    document.getElementById('noticeAdmin').style.display='block';
+    document.getElementById('gamesAdmin').style.display='block';
+    document.getElementById('facilitiesAdmin').style.display='block';
+    document.getElementById('facultyAdmin').style.display='block';
+    showMessage('Admin login successful!');
+    navTo('admin',document.querySelectorAll('nav a')[6]);
+  }else{
+    showMessage('Invalid credentials','error');
+  }
+}
+
+function logout(){
+  isAdmin=false;
+  document.getElementById('adminControls').style.display='none';
+  document.getElementById('noticeAdmin').style.display='none';
+  document.getElementById('gamesAdmin').style.display='none';
+  document.getElementById('facilitiesAdmin').style.display='none';
+  document.getElementById('facultyAdmin').style.display='none';
+  navTo('home',document.querySelectorAll('nav a')[0]);
+  showMessage('Logged out successfully!');
+}
+
+/* ===== ADMIN MANAGEMENT ===== */
+function loadAdminAccounts(){
+  const admins=JSON.parse(localStorage.getItem('admins'));
+  const adminList=document.getElementById('adminList');
+  
+  adminList.innerHTML=admins.length?admins.map((a,i)=>`
+    <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px">
+      <div style="flex:1">
+        <strong style="display:block;margin-bottom:4px">Username: ${a.u}</strong>
+        <span style="color:var(--text-light);font-size:.9rem">Password: ${'*'.repeat(a.p.length)}</span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button onclick="editAdminAccount(${i})" style="padding:8px 12px">Edit</button>
+        <button class="danger" onclick="deleteAdminAccount(${i})" style="padding:8px 12px">Delete</button>
+      </div>
+    </div>`).join(''):`<p>No admin accounts.</p>`;
+}
+
+function addAdminAccount(){
+  const user=document.getElementById('newAdminUser');
+  const pass=document.getElementById('newAdminPass');
+  
+  if(!user.value.trim()||!pass.value.trim()){
+    showMessage('Please enter username and password','error');
+    return;
+  }
+  
+  const admins=JSON.parse(localStorage.getItem('admins'));
+  if(admins.find(a=>a.u===user.value.trim())){
+    showMessage('Username already exists','error');
+    return;
+  }
+  
+  admins.push({u:user.value.trim(),p:pass.value});
+  localStorage.setItem('admins',JSON.stringify(admins));
+  user.value=pass.value='';
+  loadAdminAccounts();
+  if(isAdmin) syncAdminsToServer();
+  showMessage('Admin account added successfully!');
+}
+
+function editAdminAccount(i){
+  const admins=JSON.parse(localStorage.getItem('admins'));
+  const newUser=prompt('Edit Username',admins[i].u);
+  if(newUser===null) return;
+  if(!newUser.trim()){
+    showMessage('Username cannot be empty','error');
+    return;
+  }
+  
+  if(admins.find((a,idx)=>idx!==i&&a.u===newUser.trim())){
+    showMessage('Username already exists','error');
+    return;
+  }
+  
+  const newPass=prompt('Edit Password',admins[i].p);
+  if(newPass===null) return;
+  if(!newPass.trim()){
+    showMessage('Password cannot be empty','error');
+    return;
+  }
+  
+  admins[i].u=newUser.trim();
+  admins[i].p=newPass;
+  localStorage.setItem('admins',JSON.stringify(admins));
+  loadAdminAccounts();
+  if(isAdmin) syncAdminsToServer();
+  showMessage('Admin account updated successfully!');
+}
+
+function deleteAdminAccount(i){
+  if(!confirm('Are you sure you want to delete this admin account?')) return;
+  
+  const admins=JSON.parse(localStorage.getItem('admins'));
+  if(admins.length===1){
+    showMessage('Cannot delete the last admin account','error');
+    return;
+  }
+  
+  admins.splice(i,1);
+  localStorage.setItem('admins',JSON.stringify(admins));
+  loadAdminAccounts();
+  if(isAdmin) syncAdminsToServer();
+  showMessage('Admin account deleted successfully!');
+}
+
+
+/* ===== IMAGE UPLOAD ===== */
+const input=document.getElementById('imgInput');
+const preview=document.getElementById('imgPreview');
+const dropZone=document.getElementById('dropZone');
+
+if(dropZone){
+  dropZone.onclick=()=>input.click();
+  dropZone.ondragover=e=>{
+    e.preventDefault();
+    dropZone.classList.add('drag');
+  };
+  dropZone.ondragleave=()=>dropZone.classList.remove('drag');
+  dropZone.ondrop=e=>{
+    e.preventDefault();
+    dropZone.classList.remove('drag');
+    if(e.dataTransfer.files[0]) processImage(e.dataTransfer.files[0]);
+  };
+  input.onchange=()=>{
+    if(input.files[0]) processImage(input.files[0]);
+  };
+}
+
+function processImage(file){
+  if(!file.type.startsWith('image/')){
+    showMessage('Please select a valid image file','error');
+    return;
+  }
+  if(file.size>5*1024*1024){
+    showMessage('Image size must be less than 5MB','error');
+    return;
+  }
+  
+  const img=new Image();
+  img.onload=()=>{
+    const size=300;
+    const canvas=document.createElement('canvas');
+    canvas.width=canvas.height=size;
+    const ctx=canvas.getContext('2d');
+    const min=Math.min(img.width,img.height);
+    ctx.drawImage(img,(img.width-min)/2,(img.height-min)/2,min,min,0,0,size,size);
+    croppedImage=canvas.toDataURL('image/jpeg',0.85);
+    if(editingTeacherIndex!==null){
+      newTeacherImage=croppedImage;
+    }
+    preview.src=croppedImage;
+    showMessage('Image uploaded successfully!');
+  };
+  img.onerror=()=>showMessage('Failed to load image','error');
+  img.src=URL.createObjectURL(file);
+}
+
+/* ===== SERVER SYNC HELPERS ===== */
+async function uploadBase64ToServer(filename, dataUrl){
+  try{
+    const res = await fetch('/api/upload-base64',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({filename, data:dataUrl})});
+    if(!res.ok) throw new Error('upload failed');
+    const j = await res.json();
+    return j.path; // relative path like data/images/...
+  }catch(err){
+    console.warn('Server upload failed',err);
+    return null;
+  }
+}
+
+async function saveTeachersToServer(teachers){
+  try{
+    const res = await fetch('/api/save-teachers',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(teachers)});
+    if(!res.ok) throw new Error('save failed');
+    return true;
+  }catch(err){
+    console.warn('Save teachers failed',err);
+    return false;
+  }
+}
+
+async function saveAdminsToServer(admins){
+  try{
+    const res = await fetch('/api/save-admins',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(admins)});
+    if(!res.ok) throw new Error('save failed');
+    return true;
+  }catch(err){
+    console.warn('Save admins failed',err);
+    return false;
+  }
+}
+
+async function fetchAdminsFromServer(){
+  try{
+    const res = await fetch('/api/list-admins');
+    if(!res.ok) throw new Error('fetch failed');
+    return await res.json();
+  }catch(err){
+    return null;
+  }
+}
+
+async function syncTeachersToServer(){
+  if(!isAdmin) return;
+  let teachers = JSON.parse(localStorage.getItem('teachers')||'[]');
+  let changed = false;
+  for(let i=0;i<teachers.length;i++){
+    const t = teachers[i];
+    if(typeof t.p === 'string' && t.p.startsWith('data:')){
+      const safeName = `teacher_${i}_${Date.now()}.jpg`;
+      const path = await uploadBase64ToServer(safeName, t.p);
+      if(path){ t.p = path; changed = true; }
+    }
+  }
+  if(changed){
+    localStorage.setItem('teachers', JSON.stringify(teachers));
+    await saveTeachersToServer(teachers);
+    loadTeachers();
+    showMessage('Changes persisted to server');
+  }
+}
+
+async function syncAdminsToServer(){
+  if(!isAdmin) return;
+  const admins = JSON.parse(localStorage.getItem('admins')||'[]');
+  const ok = await saveAdminsToServer(admins);
+  if(ok) showMessage('Admin accounts synced to server');
+  else showMessage('Failed to sync admin accounts','error');
+}
+
+/* ===== TEACHERS ===== */
+function loadTeachers(){
+  const teachers=JSON.parse(localStorage.getItem('teachers'));
+  const facultyCards=document.getElementById('facultyCards');
+  const defaultIcon='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDIyMCAyMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgZmlsbD0iI2U4ZjVlOSIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiLz48Y2lyY2xlIGN4PSIxMTAiIGN5PSI2MCIgcj0iNDUiIGZpbGw9IiMwYjVlZDciLz48cmVjdCB4PSI2MCIgeT0iMTEwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjMGI1ZWQ3Ii8+PC9zdmc+';
+  
+  if(facultyCards){
+    facultyCards.innerHTML=teachers.length?teachers.map((x,i)=>`
+      <div class="card teacher-tile" style="position:relative;overflow:hidden;transition:all .3s ease">
+        <img src="${x.p}" alt="${x.n}" onerror="this.src='${defaultIcon}'">
+        <strong>${x.n}</strong>
+        <span style="color:var(--text-light);font-size:.95rem">${x.s}</span>
+        ${isAdmin?`<div class="teacher-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,.7);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;opacity:0;transition:opacity .3s ease;pointer-events:none">
+          <button onclick="editTeacherPhoto(${i})" style="padding:10px 16px;background:var(--primary);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600">📷 Edit Photo</button>
+          <button onclick="editTeacher(${i})" style="padding:10px 16px;background:var(--primary);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600">✏️ Edit Info</button>
+          <button onclick="deleteTeacher(${i})" style="padding:10px 16px;background:#ef4444;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600">🗑️ Delete</button>
+        </div>`:''}
+      </div>`).join(''):`<div class="card" style="grid-column:1/-1;text-align:center;padding:40px">No staff members added yet.</div>`;
+    
+    if(isAdmin){
+      document.querySelectorAll('.teacher-tile').forEach(tile=>{
+        tile.addEventListener('mouseenter',()=>{
+          tile.querySelector('.teacher-overlay').style.opacity='1';
+          tile.querySelector('.teacher-overlay').style.pointerEvents='auto';
+        });
+        tile.addEventListener('mouseleave',()=>{
+          tile.querySelector('.teacher-overlay').style.opacity='0';
+          tile.querySelector('.teacher-overlay').style.pointerEvents='none';
+        });
+      });
+    }
+  }
+  
+  const teacherAdminList=document.getElementById('teacherAdminList');
+  if(teacherAdminList){
+    teacherAdminList.innerHTML=teachers.length?teachers.map((x,i)=>`
+      <div class="card" draggable="true" data-teacher-index="${i}" style="display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:move;transition:all .2s ease">
+        <div style="flex:1;display:flex;gap:10px;align-items:center">
+          <span style="font-size:1.4rem;color:var(--primary)">⋮⋮</span>
+          <div>
+            <strong>${x.n}</strong><br>
+            <span style="color:var(--text-light);font-size:.9rem">${x.s}</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button onclick="editTeacherPhoto(${i})" style="padding:8px 10px">📷 Photo</button>
+          <button onclick="editTeacher(${i})" style="padding:8px 10px">✏️ Edit</button>
+          <button class="danger" onclick="deleteTeacher(${i})" style="padding:8px 10px">🗑️ Delete</button>
+        </div>
+      </div>`).join(''):`<p>No teachers added yet.</p>`;
+    
+    setupTeacherDragDrop();
+  }
+}
+
+function addTeacher(){
+  const tName=document.getElementById('tName');
+  const tSubject=document.getElementById('tSubject');
+  
+  // Validation
+  if(!validateInput(tName.value,'Teacher name')) return;
+  if(!validateInput(tSubject.value,'Subject/Role')) return;
+  
+  const teachers=JSON.parse(localStorage.getItem('teachers'));
+  const newTeacher = {
+    n:tName.value.trim(),
+    s:tSubject.value.trim(),
+    p:croppedImage||preview.src
+  };
+  
+  teachers.push(newTeacher);
+  localStorage.setItem('teachers',JSON.stringify(teachers));
+  tName.value=tSubject.value='';
+  croppedImage=null;
+  preview.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTAwIiByPSI2MCIgZmlsbD0iI2NjYyIvPjxwYXRoIGQ9Ik01MCAyNTBjMC02MCA1MC0xMDAgMTAwLTEwMHMxMDAgNDAgMTAwIDEwMCIgZmlsbD0iI2NjYyIvPjwvc3ZnPg==';
+  loadTeachers();
+  // attempt to upload any data-URI images and persist server-side when admin
+  if(isAdmin) syncTeachersToServer();
+  showMessage('Teacher added successfully!');
+}
+
+function editTeacher(i){
+  const teachers=JSON.parse(localStorage.getItem('teachers'));
+  const newName=prompt('Edit Name',teachers[i].n);
+  if(newName===null) return;
+  if(!newName.trim()){
+    showMessage('Name cannot be empty','error');
+    return;
+  }
+  const newSubject=prompt('Edit Subject',teachers[i].s);
+  if(newSubject===null) return;
+  if(!newSubject.trim()){
+    showMessage('Subject cannot be empty','error');
+    return;
+  }
+  teachers[i].n=newName.trim();
+  teachers[i].s=newSubject.trim();
+  localStorage.setItem('teachers',JSON.stringify(teachers));
+  loadTeachers();
+  showMessage('Teacher updated successfully!');
+}
+
+let editingTeacherIndex=null;
+let newTeacherImage=null;
+
+function editTeacherPhoto(i){
+  editingTeacherIndex=i;
+  const teachers=JSON.parse(localStorage.getItem('teachers'));
+  const teacher=teachers[i];
+  
+  document.getElementById('tName').value=teacher.n;
+  document.getElementById('tSubject').value=teacher.s;
+  document.getElementById('imgPreview').src=teacher.p;
+  newTeacherImage=null;
+  croppedImage=null;
+  
+  document.querySelector('#facultyAdmin button[onclick="addTeacher()"]').textContent='Update Teacher Photo';
+  document.querySelector('#facultyAdmin button[onclick="addTeacher()"]').onclick=function(){
+    updateTeacherPhoto();
+  };
+  
+  window.scrollTo({top:document.getElementById('faculty').offsetTop-100,behavior:'smooth'});
+  showMessage('Edit teacher photo - change image and click Update Teacher Photo');
+}
+
+function updateTeacherPhoto(){
+  if(editingTeacherIndex===null) return addTeacher();
+  
+  if(!newTeacherImage&&!croppedImage){
+    showMessage('Please select a new image','error');
+    return;
+  }
+  
+  const teachers=JSON.parse(localStorage.getItem('teachers'));
+  teachers[editingTeacherIndex].p=newTeacherImage||croppedImage||teachers[editingTeacherIndex].p;
+  localStorage.setItem('teachers',JSON.stringify(teachers));
+  
+  document.getElementById('tName').value='';
+  document.getElementById('tSubject').value='';
+  document.getElementById('imgPreview').src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTAwIiByPSI2MCIgZmlsbD0iI2NjYyIvPjxwYXRoIGQ9Ik01MCAyNTBjMC02MCA1MC0xMDAgMTAwLTEwMHMxMDAgNDAgMTAwIDEwMCIgZmlsbD0iI2NjYyIvPjwvc3ZnPg==';
+  editingTeacherIndex=null;
+  croppedImage=null;
+  newTeacherImage=null;
+  document.querySelector('#facultyAdmin button[onclick="addTeacher()"]').textContent='Add Teacher';
+  loadTeachers();
+  // try to persist updated photo(s) to server
+  if(isAdmin) syncTeachersToServer();
+  showMessage('Teacher photo updated successfully!');
+}
+
+function deleteTeacher(i){
+  if(!confirm('Are you sure you want to delete this teacher?')) return;
+  const teachers=JSON.parse(localStorage.getItem('teachers'));
+  teachers.splice(i,1);
+  localStorage.setItem('teachers',JSON.stringify(teachers));
+  loadTeachers();
+  showMessage('Teacher deleted successfully!');
+}
+
+let draggedTeacherElement=null;
+
+function setupTeacherDragDrop(){
+  const cards=document.querySelectorAll('#teacherAdminList [draggable="true"]');
+  cards.forEach(card=>{
+    card.ondragstart=e=>{
+      draggedTeacherElement=card;
+      card.style.opacity='0.5';
+      e.dataTransfer.effectAllowed='move';
+    };
+    card.ondragend=()=>{
+      draggedTeacherElement=null;
+      card.style.opacity='1';
+      cards.forEach(c=>c.style.backgroundColor='');
+    };
+    card.ondragover=e=>{
+      e.preventDefault();
+      e.dataTransfer.dropEffect='move';
+      if(card!==draggedTeacherElement){
+        card.style.borderTop='3px solid var(--primary)';
+      }
+    };
+    card.ondragleave=e=>{
+      if(e.target===card){
+        card.style.borderTop='';
+      }
+    };
+    card.ondrop=e=>{
+      e.preventDefault();
+      if(card!==draggedTeacherElement){
+        swapTeachers(draggedTeacherElement,card);
+      }
+      card.style.borderTop='';
+    };
+  });
+}
+
+function swapTeachers(draggedCard,targetCard){
+  const teachers=JSON.parse(localStorage.getItem('teachers'));
+  const draggedIndex=parseInt(draggedCard.dataset.teacherIndex);
+  const targetIndex=parseInt(targetCard.dataset.teacherIndex);
+  
+  [teachers[draggedIndex],teachers[targetIndex]]=[teachers[targetIndex],teachers[draggedIndex]];
+  localStorage.setItem('teachers',JSON.stringify(teachers));
+  loadTeachers();
+  showMessage('✅ Teacher position updated!');
+}
+
+
+/* ===== NOTICES ===== */
+function cleanExpired(){
+  let notices=JSON.parse(localStorage.getItem('notices')||'[]');
+  const now=new Date();
+  notices=notices.filter(x=>!x.expiry||new Date(x.expiry)>=now);
+  localStorage.setItem('notices',JSON.stringify(notices));
+}
+
+function loadNotices(){
+  cleanExpired();
+  const notices=JSON.parse(localStorage.getItem('notices')||'[]');
+  const noticeList=document.getElementById('noticeList');
+  
+  const searchTerm=(document.getElementById('noticeSearch')?.value||'').toLowerCase();
+  const categoryFilter=document.getElementById('noticeCategoryFilter')?.value||'';
+  
+  let filtered=notices.filter(x=>{
+    const matchSearch=x.text.toLowerCase().includes(searchTerm);
+    const matchCategory=!categoryFilter||(x.category||'general')===categoryFilter;
+    return matchSearch&&matchCategory;
+  });
+  
+  const pinned=filtered.filter(x=>x.pinned).sort((a,b)=>new Date(b.time)-new Date(a.time));
+  const unpinned=filtered.filter(x=>!x.pinned).sort((a,b)=>new Date(b.time)-new Date(a.time));
+  const sorted=[...pinned,...unpinned];
+  
+  if(noticeList){
+    noticeList.innerHTML=sorted.length?sorted.map((x,idx)=>`
+      <div class="card" style="border-left:4px solid ${x.priority==='urgent'?'#ef4444':x.priority==='important'?'#f59e0b':'var(--primary)'}">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div style="flex:1">
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+              ${x.pinned?'<span style="font-size:1.2rem">📌</span>':''}
+              <span class="badge ${x.priority}">${x.priority.toUpperCase()}</span>
+              <span class="badge" style="background:#e0e7ff;color:#4f46e5">${(x.category||'general').toUpperCase()}</span>
+            </div>
+            <p style="margin:12px 0;color:var(--text);line-height:1.6">${x.text}</p>
+            <small style="color:var(--text-light);font-size:.85rem">
+              📅 ${new Date(x.time).toLocaleDateString()} ${new Date(x.time).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}
+              ${x.expiry?' | ⏰ Expires: '+new Date(x.expiry).toLocaleDateString():''}
+            </small>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end" id="noticeActions${idx}"></div>
+        </div>
+      </div>`).join(''):`<div class="card" style="text-align:center;padding:40px"><p>📭 No notices at the moment.</p></div>`;
+    
+    if(isAdmin){
+      sorted.forEach((notice,idx)=>{
+        const actionsDiv=document.getElementById('noticeActions'+idx);
+        if(actionsDiv){
+          actionsDiv.innerHTML=`
+            <button onclick="editNotice(${notices.indexOf(notice)})" style="padding:6px 10px;font-size:.85rem">✏️ Edit</button>
+            <button class="danger" onclick="deleteNotice(${notices.indexOf(notice)})" style="padding:6px 10px;font-size:.85rem">🗑️ Delete</button>`;
+        }
+      });
+    }
+  }
+  
+  loadNoticesList();
+}
+
+function loadNoticesList(){
+  const noticeAdminList=document.getElementById('noticeAdminList');
+  const noticeManagePanel=document.getElementById('noticeManagePanel');
+  
+  if(!isAdmin||!noticeAdminList) return;
+  
+  const notices=JSON.parse(localStorage.getItem('notices')||'[]');
+  noticeAdminList.style.display=isAdmin?'block':'none';
+  
+  noticeManagePanel.innerHTML=notices.length?notices.sort((a,b)=>new Date(b.time)-new Date(a.time)).map((x,i)=>`
+    <div class="card" style="display:flex;justify-content:space-between;align-items:start;gap:12px;padding:12px">
+      <div style="flex:1">
+        <div style="margin-bottom:6px">
+          <span class="badge ${x.priority}">${x.priority.toUpperCase()}</span>
+          <span class="badge" style="background:#e0e7ff;color:#4f46e5">${(x.category||'general').toUpperCase()}</span>
+          ${x.pinned?'<span style="color:#f59e0b">📌 PINNED</span>':''}
+        </div>
+        <p style="margin:6px 0;font-size:.9rem">${x.text.substring(0,100)}${x.text.length>100?'...':''}</p>
+        <small style="color:var(--text-light)">${new Date(x.time).toLocaleDateString()}</small>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button onclick="editNotice(${i})" style="padding:6px 10px;font-size:.85rem">Edit</button>
+        <button class="danger" onclick="deleteNotice(${i})" style="padding:6px 10px;font-size:.85rem">Delete</button>
+      </div>
+    </div>`).join(''):`<p style="text-align:center;color:var(--text-light)">No notices yet</p>`;
+}
+
+function addNotice(){
+  if(!isAdmin){
+    showMessage('Admin access required','error');
+    return;
+  }
+  
+  const noticeText=document.getElementById('noticeText');
+  const noticePriority=document.getElementById('noticePriority');
+  const noticeCategory=document.getElementById('noticeCategory');
+  const noticeExpiry=document.getElementById('noticeExpiry');
+  const noticePinned=document.getElementById('noticePinned');
+  
+  if(!validateInput(noticeText.value,'Notice text',3)) return;
+  
+  const notices=JSON.parse(localStorage.getItem('notices')||'[]');
+  notices.push({
+    text:noticeText.value.trim(),
+    priority:noticePriority.value,
+    category:noticeCategory.value,
+    expiry:noticeExpiry.value,
+    pinned:noticePinned.checked,
+    time:new Date().toISOString()
+  });
+  localStorage.setItem('notices',JSON.stringify(notices));
+  noticeText.value='';
+  noticeExpiry.value='';
+  noticePinned.checked=false;
+  loadNotices();
+  showMessage('✅ Notice posted successfully!');
+}
+
+function editNotice(i){
+  if(!isAdmin) return;
+  
+  const notices=JSON.parse(localStorage.getItem('notices')||'[]');
+  const notice=notices[i];
+  
+  const newText=prompt('Edit notice text:',notice.text);
+  if(newText===null) return;
+  if(!newText.trim()){
+    showMessage('Notice text cannot be empty','error');
+    return;
+  }
+  
+  notices[i].text=newText.trim();
+  localStorage.setItem('notices',JSON.stringify(notices));
+  loadNotices();
+  showMessage('✅ Notice updated successfully!');
+}
+
+function deleteNotice(i){
+  if(!isAdmin) return;
+  if(!confirm('Are you sure you want to delete this notice?')) return;
+  
+  const notices=JSON.parse(localStorage.getItem('notices')||'[]');
+  notices.splice(i,1);
+  localStorage.setItem('notices',JSON.stringify(notices));
+  loadNotices();
+  showMessage('✅ Notice deleted successfully!');
+}
+
+
+/* ===== NOTICE SEARCH & FILTER ===== */
+document.getElementById('noticeSearch').addEventListener('input',loadNotices);
+document.getElementById('noticeCategoryFilter').addEventListener('change',loadNotices);
+
+/* ===== GAMES ===== */
+const games=[
+  {id:'football',name:'⚽ Football',desc:'Build teamwork & strategic thinking'},
+  {id:'cricket',name:'🏏 Cricket',desc:'Develop precision & coordination'},
+  {id:'athletics',name:'🏃 Athletics',desc:'Enhance speed & endurance'},
+  {id:'volleyball',name:'🏐 Volleyball',desc:'Boost agility & collaboration'},
+  {id:'training',name:'🤸 Physical Training',desc:'Build strength & flexibility'}
+];
+
+function initGamesStorage(){
+  if(!localStorage.getItem('games')){
+    const defaultGames={};
+    games.forEach(g=>{
+      defaultGames[g.id]={name:g.name,desc:g.desc,image:null};
+    });
+    localStorage.setItem('games',JSON.stringify(defaultGames));
+  }
+}
+
+function loadGames(){
+  initGamesStorage();
+  const gamesData=JSON.parse(localStorage.getItem('games'));
+  const gamesCards=document.getElementById('gamesCards');
+  const defaultIcon='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDIyMCAyMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgZmlsbD0iIzIyYzU1ZSIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiLz48Y2lyY2xlIGN4PSIxMTAiIGN5PSI3MCIgcj0iNDUiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSI3MCIgeT0iMTIwIiB3aWR0aD0iODAiIGhlaWdodD0iNjAiIGZpbGw9IiNmZmYiLz48L3N2Zz4=';
+  
+  if(gamesCards){
+    gamesCards.innerHTML=games.map(g=>{
+      const data=gamesData[g.id];
+      return `
+        <div class="card">
+          <img src="${data.image||defaultIcon}" alt="${data.name}" onerror="this.src='${defaultIcon}'">
+          <strong>${data.name}</strong>
+          <span style="color:var(--text-light);font-size:.95rem">${data.desc}</span>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
+let selectedGame=null;
+let gameImage=null;
+
+const gameDropZone=document.getElementById('gameDropZone');
+const gameImgInput=document.getElementById('gameImgInput');
+const gamePreview=document.getElementById('gamePreview');
+
+if(gameDropZone){
+  gameDropZone.onclick=()=>gameImgInput.click();
+  gameDropZone.ondragover=e=>{
+    e.preventDefault();
+    gameDropZone.classList.add('drag');
+  };
+  gameDropZone.ondragleave=()=>gameDropZone.classList.remove('drag');
+  gameDropZone.ondrop=e=>{
+    e.preventDefault();
+    gameDropZone.classList.remove('drag');
+    if(e.dataTransfer.files[0]) processGameImage(e.dataTransfer.files[0]);
+  };
+  gameImgInput.onchange=()=>{
+    if(gameImgInput.files[0]) processGameImage(gameImgInput.files[0]);
+  };
+}
+
+function processGameImage(file){
+  if(!file.type.startsWith('image/')){
+    showMessage('Please select a valid image file','error');
+    return;
+  }
+  if(file.size>5*1024*1024){
+    showMessage('Image size must be less than 5MB','error');
+    return;
+  }
+  
+  const img=new Image();
+  img.onload=()=>{
+    const canvas=document.createElement('canvas');
+    canvas.width=canvas.height=300;
+    const ctx=canvas.getContext('2d');
+    const min=Math.min(img.width,img.height);
+    ctx.drawImage(img,(img.width-min)/2,(img.height-min)/2,min,min,0,0,300,300);
+    gameImage=canvas.toDataURL('image/jpeg',0.85);
+    gamePreview.src=gameImage;
+    showMessage('Image selected successfully!');
+  };
+  img.onerror=()=>showMessage('Failed to load image','error');
+  img.src=URL.createObjectURL(file);
+}
+
+document.getElementById('gameSelect').onchange=function(){
+  selectedGame=this.value;
+  if(selectedGame){
+    const gamesData=JSON.parse(localStorage.getItem('games'));
+    gameImage=gamesData[selectedGame].image;
+    gamePreview.src=gameImage||'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22 viewBox=%220 0 150 150%22%3E%3Crect fill=%22%23ccc%22 width=%22150%22 height=%22150%22/%3E%3C/svg%3E';
+  }
+};
+
+function updateGameImage(){
+  if(!selectedGame){
+    showMessage('Please select a game first','error');
+    return;
+  }
+  if(!gameImage){
+    showMessage('Please select an image first','error');
+    return;
+  }
+  
+  const gamesData=JSON.parse(localStorage.getItem('games'));
+  gamesData[selectedGame].image=gameImage;
+  localStorage.setItem('games',JSON.stringify(gamesData));
+  loadGames();
+  loadGamesList();
+  showMessage('Game image updated successfully!');
+  gameImage=null;
+  gameImgInput.value='';
+  document.getElementById('gameSelect').value='';
+  selectedGame=null;
+}
+
+function loadGamesList(){
+  const gamesData=JSON.parse(localStorage.getItem('games'));
+  const gamesList=document.getElementById('gamesList');
+  
+  gamesList.innerHTML=games.map((g,i)=>{
+    const data=gamesData[g.id];
+    return `
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px">
+        <div style="flex:1">
+          <strong style="display:block;margin-bottom:4px">${data.name}</strong>
+          <span style="color:var(--text-light);font-size:.9rem">${data.desc}</span>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button onclick="editGamePhoto('${g.id}')" style="padding:8px 12px">Edit Photo</button>
+          <button onclick="editGame('${g.id}')" style="padding:8px 12px">Edit</button>
+          <button class="danger" onclick="deleteGame('${g.id}')" style="padding:8px 12px">Delete</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function editGame(gameId){
+  const gamesData=JSON.parse(localStorage.getItem('games'));
+  const gameGame=games.find(g=>g.id===gameId);
+  
+  const newName=prompt('Edit Game Name',gamesData[gameId].name);
+  if(newName===null) return;
+  if(!newName.trim()){
+    showMessage('Game name cannot be empty','error');
+    return;
+  }
+  
+  const newDesc=prompt('Edit Description',gamesData[gameId].desc);
+  if(newDesc===null) return;
+  if(!newDesc.trim()){
+    showMessage('Description cannot be empty','error');
+    return;
+  }
+  
+  gamesData[gameId].name=newName.trim();
+  gamesData[gameId].desc=newDesc.trim();
+  localStorage.setItem('games',JSON.stringify(gamesData));
+  loadGames();
+  loadGamesList();
+  showMessage('Game updated successfully!');
+}
+
+function deleteGame(gameId){
+  if(!confirm('Are you sure you want to delete this game? Note: Game will be reset to default.')) return;
+  
+  const gamesData=JSON.parse(localStorage.getItem('games'));
+  const gameGame=games.find(g=>g.id===gameId);
+  
+  gamesData[gameId]={name:gameGame.name,desc:gameGame.desc,image:null};
+  localStorage.setItem('games',JSON.stringify(gamesData));
+  loadGames();
+  loadGamesList();
+  showMessage('Game deleted successfully!');
+}
+
+function editGamePhoto(gameId){
+  selectedGame=gameId;
+  const gamesData=JSON.parse(localStorage.getItem('games'));
+  const gamePreview=document.getElementById('gamePreview');
+  
+  gamePreview.src=gamesData[gameId].image||'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22 viewBox=%220 0 150 150%22%3E%3Crect fill=%22%23ccc%22 width=%22150%22 height=%22150%22/%3E%3C/svg%3E';
+  gameImage=null;
+  document.getElementById('gameSelect').value=gameId;
+  
+  window.scrollTo({top:document.getElementById('games').offsetTop-100,behavior:'smooth'});
+  showMessage('Select new image and click Update Image');
+}
+
+
+/* ===== FACILITIES ===== */
+const facilities=[
+  {id:'library',name:'📚 Well-stocked Library',desc:'Extensive collection of books & digital resources'},
+  {id:'labs',name:'🧪 Science & Computer Labs',desc:'Modern equipment for hands-on learning'},
+  {id:'classrooms',name:'🏫 Spacious Classrooms',desc:'Well-ventilated & well-equipped learning spaces'},
+  {id:'transport',name:'🚌 Transport Facility',desc:'Safe & comfortable transportation for students'}
+];
+
+function initFacilitiesStorage(){
+  if(!localStorage.getItem('facilities')){
+    const defaultFacilities={};
+    facilities.forEach(f=>{
+      defaultFacilities[f.id]={name:f.name,desc:f.desc,image:null};
+    });
+    localStorage.setItem('facilities',JSON.stringify(defaultFacilities));
+  }
+}
+
+function loadFacilities(){
+  initFacilitiesStorage();
+  let facilitiesData=JSON.parse(localStorage.getItem('facilities'))||{};
+  const facilitiesCards=document.getElementById('facilitiesCards');
+  const defaultIcon='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDIyMCAyMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgZmlsbD0iIzIyYzU1ZSIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiLz48Y2lyY2xlIGN4PSIxMTAiIGN5PSI3MCIgcj0iNDUiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSI3MCIgeT0iMTIwIiB3aWR0aD0iODAiIGhlaWdodD0iNjAiIGZpbGw9IiNmZmYiLz48L3N2Zz4=';
+  
+  if(facilitiesCards){
+    facilitiesCards.innerHTML=facilities.map(f=>{
+      const data=facilitiesData[f.id]||{name:f.name,desc:f.desc,image:null};
+      return `
+        <div class="card">
+          <img src="${data.image||defaultIcon}" alt="${data.name}" onerror="this.src='${defaultIcon}'">
+          <strong>${data.name}</strong>
+          <span style="color:var(--text-light);font-size:.95rem">${data.desc}</span>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
+let selectedFacility=null;
+let facilityImage=null;
+
+const facilityDropZone=document.getElementById('facilityDropZone');
+const facilityImgInput=document.getElementById('facilityImgInput');
+const facilityPreview=document.getElementById('facilityPreview');
+
+if(facilityDropZone){
+  facilityDropZone.onclick=()=>facilityImgInput.click();
+  facilityDropZone.ondragover=e=>{
+    e.preventDefault();
+    facilityDropZone.classList.add('drag');
+  };
+  facilityDropZone.ondragleave=()=>facilityDropZone.classList.remove('drag');
+  facilityDropZone.ondrop=e=>{
+    e.preventDefault();
+    facilityDropZone.classList.remove('drag');
+    if(e.dataTransfer.files[0]) processFacilityImage(e.dataTransfer.files[0]);
+  };
+  facilityImgInput.onchange=()=>{
+    if(facilityImgInput.files[0]) processFacilityImage(facilityImgInput.files[0]);
+  };
+}
+
+function processFacilityImage(file){
+  if(!file.type.startsWith('image/')){
+    showMessage('Please select a valid image file','error');
+    return;
+  }
+  if(file.size>5*1024*1024){
+    showMessage('Image size must be less than 5MB','error');
+    return;
+  }
+  
+  const img=new Image();
+  img.onload=()=>{
+    const canvas=document.createElement('canvas');
+    canvas.width=canvas.height=300;
+    const ctx=canvas.getContext('2d');
+    const min=Math.min(img.width,img.height);
+    ctx.drawImage(img,(img.width-min)/2,(img.height-min)/2,min,min,0,0,300,300);
+    facilityImage=canvas.toDataURL('image/jpeg',0.85);
+    facilityPreview.src=facilityImage;
+    showMessage('Image selected successfully!');
+  };
+  img.onerror=()=>showMessage('Failed to load image','error');
+  img.src=URL.createObjectURL(file);
+}
+
+document.getElementById('facilitySelect').onchange=function(){
+  selectedFacility=this.value;
+  if(selectedFacility){
+    const facilitiesData=JSON.parse(localStorage.getItem('facilities'));
+    facilityImage=facilitiesData[selectedFacility].image;
+    facilityPreview.src=facilityImage||'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22 viewBox=%220 0 150 150%22%3E%3Crect fill=%22%23ccc%22 width=%22150%22 height=%22150%22/%3E%3C/svg%3E';
+  }
+};
+
+// Rebuild the facility select options from the `facilities` array
+function updateFacilitySelect(){
+  const sel = document.getElementById('facilitySelect');
+  if(!sel) return;
+  sel.innerHTML = '<option value="">Select a facility...</option>' + facilities.map(f=>`<option value="${f.id}">${f.name}</option>`).join('');
+}
+
+// Add a new facility to localStorage and client state
+function addFacility(){
+  const idEl = document.getElementById('newFacilityId');
+  const nameEl = document.getElementById('newFacilityName');
+  const descEl = document.getElementById('newFacilityDesc');
+  const id = (idEl.value||'').trim();
+  const name = (nameEl.value||'').trim();
+  const desc = (descEl.value||'').trim();
+  if(!id||!name){ showMessage('Please provide id and name','error'); return; }
+  const safeId = id.replace(/[^a-z0-9_-]/gi,'_').toLowerCase();
+  // prevent duplicate ids
+  if(facilities.find(f=>f.id===safeId)) { showMessage('Facility id already exists','error'); return; }
+
+  // add to client-side facilities list (used for ordering & select options)
+  facilities.push({id: safeId, name, desc});
+
+  // persist into localStorage facilities map
+  const facilitiesData = JSON.parse(localStorage.getItem('facilities')||'{}');
+  facilitiesData[safeId] = { name, desc, image: null };
+  localStorage.setItem('facilities', JSON.stringify(facilitiesData));
+
+  // update UI
+  updateFacilitySelect();
+  loadFacilities();
+  loadFacilitiesList();
+
+  // clear inputs
+  idEl.value = nameEl.value = descEl.value = '';
+  showMessage('Facility added locally');
+
+  // if admin, try to persist to server
+  if(isAdmin){
+    // POST to /api/add-facility (server will create or update key)
+    (async ()=>{
+      try{
+        const res = await fetch('/api/add-facility',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:safeId,name,desc,image: null})});
+        if(res.ok){ showMessage('Facility persisted to server'); }
+        else { showMessage('Failed to persist facility to server','error'); }
+      }catch(e){ console.warn(e); showMessage('Failed to reach server','error'); }
+    })();
+  }
+}
+
+function updateFacilityImage(){
+  if(!selectedFacility){
+    showMessage('Please select a facility first','error');
+    return;
+  }
+  if(!facilityImage){
+    showMessage('Please select an image first','error');
+    return;
+  }
+  
+  const facilitiesData=JSON.parse(localStorage.getItem('facilities')||'{}');
+  facilitiesData[selectedFacility].image=facilityImage;
+  localStorage.setItem('facilities',JSON.stringify(facilitiesData));
+  loadFacilities();
+  loadFacilitiesList();
+  showMessage('Facility image updated successfully!');
+  facilityImage=null;
+  facilityImgInput.value='';
+  document.getElementById('facilitySelect').value='';
+  selectedFacility=null;
+}
+
+function loadFacilitiesList(){
+  const facilitiesData=JSON.parse(localStorage.getItem('facilities')||'{}');
+  const facilitiesList=document.getElementById('facilitiesList');
+  
+  facilitiesList.innerHTML=facilities.map((f,i)=>{
+    const data=facilitiesData[f.id]||{name:f.name,desc:f.desc,image:null};
+    return `
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px">
+        <div style="flex:1">
+          <strong style="display:block;margin-bottom:4px">${data.name}</strong>
+          <span style="color:var(--text-light);font-size:.9rem">${data.desc}</span>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button onclick="editFacilityPhoto('${f.id}')" style="padding:8px 12px">Edit Photo</button>
+          <button onclick="editFacility('${f.id}')" style="padding:8px 12px">Edit</button>
+          <button class="danger" onclick="deleteFacility('${f.id}')" style="padding:8px 12px">Delete</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function editFacility(facilityId){
+  const facilitiesData=JSON.parse(localStorage.getItem('facilities')||'{}');
+  if(!facilitiesData[facilityId]){ showMessage('Facility not found','error'); return; }
+  
+  const newName=prompt('Edit Facility Name',facilitiesData[facilityId].name);
+  if(newName===null) return;
+  if(!newName.trim()){
+    showMessage('Facility name cannot be empty','error');
+    return;
+  }
+  
+  const newDesc=prompt('Edit Description',facilitiesData[facilityId].desc);
+  if(newDesc===null) return;
+  if(!newDesc.trim()){
+    showMessage('Description cannot be empty','error');
+    return;
+  }
+  
+  facilitiesData[facilityId].name=newName.trim();
+  facilitiesData[facilityId].desc=newDesc.trim();
+  localStorage.setItem('facilities',JSON.stringify(facilitiesData));
+  // keep the in-memory facilities list in sync (used for select options)
+  const fidx = facilities.findIndex(x=>x.id===facilityId);
+  if(fidx!==-1){ facilities[fidx].name = newName.trim(); facilities[fidx].desc = newDesc.trim(); }
+  updateFacilitySelect();
+  loadFacilities();
+  loadFacilitiesList();
+  showMessage('Facility updated successfully!');
+}
+function deleteFacility(facilityId){
+  if(!confirm('Are you sure you want to permanently delete this facility? This cannot be undone.')) return;
+  
+  const facilitiesData=JSON.parse(localStorage.getItem('facilities')||'{}');
+  if(!facilitiesData[facilityId]){
+    showMessage('Facility not found','error');
+    return;
+  }
+  
+  // Remove from localStorage
+  delete facilitiesData[facilityId];
+  localStorage.setItem('facilities',JSON.stringify(facilitiesData));
+  
+  // Remove from client-side facilities array
+  const fidx = facilities.findIndex(f=>f.id===facilityId);
+  if(fidx!==-1){ facilities.splice(fidx,1); }
+  
+  // Update UI
+  updateFacilitySelect();
+  loadFacilities();
+  loadFacilitiesList();
+  showMessage('Facility deleted completely');
+  
+  // If admin, sync deletion to server
+  if(isAdmin){
+    (async ()=>{
+      try{
+        const res = await fetch('/api/delete-facility',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:facilityId})});
+        if(res.ok){ showMessage('Deletion persisted to server'); }
+        else { showMessage('Failed to sync deletion to server','error'); }
+      }catch(e){ console.warn(e); showMessage('Failed to reach server','error'); }
+    })();
+  }
+}
+
+function editFacilityPhoto(facilityId){
+  selectedFacility=facilityId;
+  const facilitiesData=JSON.parse(localStorage.getItem('facilities')||'{}');
+  const facility=facilitiesData[facilityId];
+  if(!facility){ showMessage('Facility not found','error'); return; }
+  const facilityPreview=document.getElementById('facilityPreview');
+  
+  facilityPreview.src=facility.image||'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22 viewBox=%220 0 150 150%22%3E%3Crect fill=%22%23ccc%22 width=%22150%22 height=%22150%22/%3E%3C/svg%3E';
+  facilityImage=null;
+  document.getElementById('facilitySelect').value=facilityId;
+  
+  window.scrollTo({top:document.getElementById('facilities').offsetTop-100,behavior:'smooth'});
+  showMessage('Select new image and click Update Image');
+}
+
+
+/* ===== THEME ===== */
+// Dark theme only - no toggle
+
+/* ===== KEYBOARD SHORTCUTS ===== */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&document.getElementById('loginPass')===document.activeElement){
+    login();
+  }
+});
+
+// Ensure initial data is loaded from /data/*.json on first visit, then initialize UI
+async function initializeApp(){
+  try {
+    await checkGitHubStatus();
+    await ensureInitialData();
+    loadAdminAccounts();
+    loadTeachers();
+    loadNotices();
+    loadGames();
+    loadGamesList();
+    loadFacilities();
+    updateFacilitySelect();
+    loadFacilitiesList();
+    console.log('✓ App initialized successfully');
+  } catch(err) {
+    console.error('Initialization error:', err);
+    showMessage('Warning: Could not load some data. Trying fallback...','warning');
+    // Fallback initialization
+    loadAdminAccounts();
+    loadTeachers();
+    loadNotices();
+    loadGames();
+    loadGamesList();
+    loadFacilities();
+    updateFacilitySelect();
+    loadFacilitiesList();
+  }
+}
+
+// Start the app
+initializeApp();
+</script>
+
+</body>
+</html>
